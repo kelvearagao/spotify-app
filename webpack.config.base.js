@@ -8,9 +8,6 @@ module.exports = env => ({
     path: path.join(__dirname, 'dist'),
     filename: 'app.bundle.js'
   },
-  resolve: {
-    modules: ["src", "node_modules"]
-  },
   module: {
     rules: [
       {
