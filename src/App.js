@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 //import { useDispatch } from "react-redux"
-import { BrowserRouter as Router, Route } from "react-router-dom"
+import { Router, Route } from "react-router-dom"
 import Home from "components/pages/Home"
 import Container from "components/Container"
 import Content from "components/Content"
@@ -38,7 +38,7 @@ function App() {
   //     dispatch({ type: "TOKEN_REQUEST" })
   //   }
   // }, [hasToken, dispatch])
-
+  console.log(process.env.PUBLIC_URL)
   return (
     <Container>
       <Logo />
