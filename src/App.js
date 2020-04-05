@@ -29,7 +29,7 @@ function App() {
     if(access_token) {
       localStorage.setItem('access_token', access_token)
       setHasToken(true)
-      window.history.pushState({}, document.title, "/");
+      //window.history.pushState({}, document.title, "/");
     }
   }, [])
 
