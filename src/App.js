@@ -6,6 +6,7 @@ import Container from "components/Container"
 import Content from "components/Content"
 import Logo from "components/Logo"
 import Album from "components/pages/Album"
+import browserHistory from 'utils/browserHistory'
 
 function App() {
   //const dispatch = useDispatch()
@@ -45,7 +46,7 @@ function App() {
         {!hasToken ? (
           "Loading ..."
         ) : (
-          <Router>
+          <Router history={browserHistory}>
             <Route exact path="/" component={Home} />
             <Route exact path="/album/:id" component={Album} />
           </Router>
