@@ -20,7 +20,7 @@ function App() {
     const access_token = params.get('access_token')
 
     if(!access_token) {
-      window.location.href = 'https://7j1ylvai5f.execute-api.us-west-2.amazonaws.com/dev/login'
+      window.location.href = process.env.REACT_APP_LOGIN_ENDPOINT
 
       return
     }
