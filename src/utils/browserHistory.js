@@ -1,5 +1,5 @@
 import { createBrowserHistory } from 'history'
 
-export const getBrowserHistory = () => createBrowserHistory({ basename: process.env.PUBLIC_URL })
+export const getBrowserHistory = () => createBrowserHistory({ basename: '/' })
 
 export default getBrowserHistory()
