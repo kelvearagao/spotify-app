@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "homepage": "spotify-app",
   "scripts": {
-    "start": "webpack-dev-server --open --config webpack.config.dev.js",
-    "build": "webpack --config webpack.config.prod.js",
+    "start": "webpack-dev-server --open --env.ENVIRONMENT=development --config webpack.config.dev.js",
+    "build": "webpack --env.ENVIRONMENT=production --config webpack.config.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -15,6 +15,8 @@
     "@babel/preset-env": "^7.9.0",
     "@babel/preset-react": "^7.9.4",
     "babel-loader": "^8.1.0",
+    "dotenv-webpack": "^1.7.0",
+    "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.0.4",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
@@ -22,7 +24,14 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "ramda": "^0.27.0",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.1.2",
+    "redux": "^4.0.5",
+    "redux-observable": "^1.2.0",
+    "rxjs": "^6.5.5",
+    "styled-components": "^5.0.1"
   }
 }
