@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 //import { useDispatch } from "react-redux"
-import { Router, Route } from "react-router-dom"
+import { HashRouter as Router, Route } from "react-router-dom"
 import Home from "components/pages/Home"
 import Container from "components/Container"
 import Content from "components/Content"
@@ -38,7 +38,6 @@ function App() {
   //     dispatch({ type: "TOKEN_REQUEST" })
   //   }
   // }, [hasToken, dispatch])
-  console.log(process.env.PUBLIC_URL)
   return (
     <Container>
       <Logo />
@@ -46,7 +45,7 @@ function App() {
         {!hasToken ? (
           "Loading ..."
         ) : (
-          <Router history={browserHistory}>
+          <Router basename='/'>
             <Route exact path="/" component={Home} />
             <Route exact path="/album/:id" component={Album} />
           </Router>
