@@ -25,7 +25,7 @@ function App() {
       localStorage.setItem('access_token', access_token)
       setHasToken(true)
 
-      window.history.pushState({}, document.title, window.location.origin + '/#/')
+      window.history.pushState({}, document.title, process.env.PUBLIC_URL + (process.env.PUBLIC_URL === '/' ? '#/' : '/#/'))
     } else {
       window.location.href = process.env.REACT_APP_LOGIN_ENDPOINT
       return
