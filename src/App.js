@@ -16,6 +16,10 @@ function App() {
   console.log(window.location)
 
   useEffect(() => {
+    if(hasToken) {
+      return
+    }
+
     const params = new URLSearchParams(window.location.search);
     const access_token = params.get('access_token')
 
