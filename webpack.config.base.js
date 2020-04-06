@@ -7,7 +7,7 @@ module.exports = env => ({
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'app.bundle.js',
-    publicPath: '/'
+    //publicPath: '/'
   },
   module: {
     rules: [
