@@ -12,24 +12,23 @@ function App() {
   //const dispatch = useDispatch()
   const [hasToken, setHasToken] = useState(() => localStorage.getItem("access_token"))
 
-  useEffect(() => {
-    if(hasToken) {
-      return
-    }
+  console.log('1 -->', !!hasToken, process.env.PUBLIC_URL)
+  console.log(window.location)
 
+  useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const access_token = params.get('access_token')
 
-    if(!access_token) {
-      window.location.href = process.env.REACT_APP_LOGIN_ENDPOINT
-
-      return
-    }
+    console.log('2-->', access_token)
 
     if(access_token) {
       localStorage.setItem('access_token', access_token)
       setHasToken(true)
-      //window.history.pushState({}, document.title, "/");
+
+      window.history.pushState({}, document.title, window.location.origin + '/#/')
+    } else {
+      window.location.href = process.env.REACT_APP_LOGIN_ENDPOINT
+      return
     }
   }, [])
 
