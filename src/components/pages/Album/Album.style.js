@@ -22,18 +22,20 @@ export const Wrapper = styled.section`
   }
 
   aside {
-    div {
-      cursor: default;
-      margin-bottom: 20px;
-    }
+    #main-img {
+      div {
+        cursor: default;
+        margin-bottom: 20px;
+      }
 
-    img {
-      width: 100%;
-      background-color: #999999;
-    }
+      img {
+        width: 100%;
+        background-color: #999999;
+      }
 
-    p {
-      font-size: 18px;
+      p {
+        font-size: 18px;
+      }
     }
   }
 
@@ -47,9 +49,11 @@ export const Wrapper = styled.section`
     }
 
     aside {
-      img {
-        width: 300px;
-        height: 300px;
+      #main-img {
+        img {
+          width: 300px;
+          height: 300px;
+        }
       }
     }
 

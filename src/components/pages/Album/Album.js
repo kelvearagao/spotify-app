@@ -15,6 +15,7 @@ import { Wrapper } from "./Album.style"
 import { Link } from "react-router-dom"
 import { path } from "ramda"
 import { albumRequest } from "store/reducers/album"
+import { playSetMusic } from "store/reducers/play"
 
 export default ({ match }) => {
   const data = useSelector(({ album }) => album.data[match.params.id])
@@ -35,9 +36,15 @@ export default ({ match }) => {
 
   function selectMusic(item) {
     setMusic(item)
-
-    audioRef.current.src = item.preview_url
-    audioRef.current.play()
+    console.log(item)
+    dispatch(playSetMusic({
+      previewUrl: item.preview_url,
+      artist: item.artists[0].name,
+      musicName: item.name,
+      albumImg: image,
+    }))
+    //audioRef.current.src = item.preview_url
+    //audioRef.current.play()
   }
 
   return (
@@ -50,13 +57,7 @@ export default ({ match }) => {
 
       <section>
         <aside>
-          <Card imgSrc={image} title={name} subtitle={artist} isActive />
-
-          <AudioPlay
-            artist={artist}
-            trackName={music.name}
-            audioRef={audioRef}
-          />
+          <Card id="main-img" imgSrc={image} title={name} subtitle={artist} isActive />
         </aside>
 
         <article>

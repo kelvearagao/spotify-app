@@ -10,7 +10,6 @@ export const CardSubtitle = styled.p`
 `
 
 export const Card = styled.div`
-  opacity: ${({ isActive }) => (isActive ? 1 : 0.5)};
   display: flex;
   flex-direction: column;
   font-size: 14px;
@@ -30,6 +29,10 @@ export const Card = styled.div`
   }
 
   transition: opacity 0.5s;
+
+  @media (min-width: 400px) {
+    opacity: ${({ isActive }) => (isActive ? 1 : 0.5)};
+  }
 `
 
 export default Card

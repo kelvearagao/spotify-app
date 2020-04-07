@@ -4,14 +4,23 @@ export const Wrapper = styled.div`
   color: #fafafa;
 
   label span {
-    padding-left: 10px;
+    padding-left: 0;
     font-size: 16px;
     opacity: 0.8;
+
+    @media (min-width: 400px) {
+      padding-left: 10px;
+    }
   }
 
   h1 {
+    font-size: 18px;
     margin: 35px 0 30px 5px;
     font-weight: 300;
+
+    @media (min-width: 400px) {
+      font-size: 24px;
+    }
   }
 `
 

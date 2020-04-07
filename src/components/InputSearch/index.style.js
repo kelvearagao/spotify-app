@@ -9,7 +9,7 @@ export const InputSearch = styled.input`
   border: 0;
   outline: 0;
   caret-color: #ffffff;
-  padding: 8px 10px 10px 10px;
+  padding: 8px 0 10px 0;
   border-bottom: 1px solid #999999;
 
   ::-webkit-input-placeholder {
@@ -18,5 +18,6 @@ export const InputSearch = styled.input`
 
   @media (min-width: 400px) {
     font-size: 38px;
+    padding: 8px 10px 10px 10px;
   }
 `
