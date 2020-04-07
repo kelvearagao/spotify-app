@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
 
   h1 {
     font-size: 18px;
-    margin: 35px 0 30px 5px;
+    margin: 35px 0 6px 5px;
     font-weight: 300;
 
     @media (min-width: 400px) {
@@ -25,17 +25,17 @@ export const Wrapper = styled.div`
 `
 
 export const CardsWrapper = styled.div`
-  display: grid;
-  grid-column-gap: 70px;
-  grid-row-gap: 33px;
-  justify-content: space-between;
-
   img {
     width: 100%;
     background-color: #999999;
+    margin-top: 24px;
   }
 
   @media (min-width: 400px) {
+    display: grid;
+    grid-column-gap: 70px;
+    grid-row-gap: 33px;
+    justify-content: space-between;
     grid-template-columns: repeat(auto-fill, 150px);
 
     img {

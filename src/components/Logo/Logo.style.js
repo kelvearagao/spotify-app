@@ -5,6 +5,6 @@ export default styled.img`
   width: 50px;
 
   @media (min-width: 400px) {
-    
+    display: block;
   }
 `

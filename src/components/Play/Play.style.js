@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Album = styled.div`
     display: none;
 
-    @media (min-width: 400px) {
+    @media (min-width: 800px) {
         display: flex;
         align-items: center;
 

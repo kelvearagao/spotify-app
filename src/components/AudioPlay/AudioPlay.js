@@ -1,8 +1,5 @@
 import React from "react"
 import { Wrapper } from "./AudioPlay.style"
-import Pre from "./Pre.png"
-import Pause from "./Pause.png"
-import Next from "./Next.png"
 
 export default ({ trackName, artist, audioRef }) => (
   <Wrapper>

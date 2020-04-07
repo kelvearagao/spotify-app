@@ -23,13 +23,18 @@ export const Wrapper = styled.section`
 
   aside {
     #main-img {
+      margin-bottom: 24px;
+      
       div {
         cursor: default;
         margin-bottom: 20px;
       }
 
       img {
+        margin: 0 auto;
         width: 100%;
+        max-width: 400px;
+        max-height: 400px;
         background-color: #999999;
       }
 
@@ -43,7 +48,7 @@ export const Wrapper = styled.section`
     margin-left: 0px;
   }
 
-  @media (min-width: 400px) {
+  @media (min-width: 800px) {
     section {
       flex-direction: row;
     }

@@ -7,7 +7,7 @@ const Container = styled.div`
   color: #fafafa;
   padding: 24px;
   margin: 0 auto;
-  padding-bottom: 78px;
+  padding-bottom: 82px;
 `
 
 export default Container
