@@ -3,6 +3,7 @@ import { renderWithProviderAndRouter, mockStore } from '__tests__/utils'
 import { createMemoryHistory } from 'history'
 import Album from './Album'
 import { fireEvent } from '@testing-library/dom'
+import { playSetMusic } from 'store/reducers/play'
 
 window.HTMLMediaElement.prototype.play = jest.fn()
 
@@ -15,7 +16,13 @@ const item = {
     {
       id: 1,
       name: 'Fireworks',
-      duration_ms: 200000
+      preview_url: 'music.mp3',
+      duration_ms: 200000,
+      artists: [
+        {
+          name: 'Katy'
+        }
+      ]
     }
   ]
 }
@@ -38,9 +45,6 @@ describe('Album', () => {
     })
 
     expect(getByText('Voltar')).toBeInTheDocument()
-    expect(
-      getByText('Your browser does not support the audio element.')
-    ).toBeInTheDocument()
   })
 
   it('Should render the track item', () => {
@@ -69,6 +73,19 @@ describe('Album', () => {
   })
 
   it('Should play the track item when it is clicked', () => {
+    const store = mockStore({
+      album: {
+        data: {
+          [item.id]: {
+            ...item
+          }
+        }
+      },
+      play: {
+        data: {}
+      }
+    })
+    store.dispatch = jest.fn()
     const match = {
       params: {
         id: 1
@@ -76,20 +93,19 @@ describe('Album', () => {
     }
     const { getByText } = renderWithProviderAndRouter({
       history: createMemoryHistory(),
-      store: mockStore({
-        album: {
-          data: {
-            [item.id]: {
-              ...item
-            }
-          }
-        }
-      }),
+      store,
       component: <Album match={match} />
     })
 
     fireEvent.click(getByText('Fireworks'))
 
-    expect(window.HTMLMediaElement.prototype.play).toBeCalled()
+    expect(store.dispatch).toBeCalledWith(
+      playSetMusic({
+        albumImg: 'katy.jpeg',
+        artist: 'Katy',
+        musicName: 'Fireworks',
+        previewUrl: 'music.mp3'
+      })
+    )
   })
 })

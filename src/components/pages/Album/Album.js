@@ -34,11 +34,10 @@ export default ({ match }) => {
 
   function selectMusic(item) {
     setMusic(item)
-    console.log(item)
     dispatch(
       playSetMusic({
         previewUrl: item.preview_url,
-        artist: item.artists[0].name,
+        artist: path(['artists', 0, 'name'], item),
         musicName: item.name,
         albumImg: image
       })

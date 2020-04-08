@@ -10,6 +10,11 @@
     "format": "pretty-quick",
     "lint": "eslint ./"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --state && npm run lint && npm run test:ci"
+    }
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

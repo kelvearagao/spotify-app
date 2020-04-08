@@ -14,7 +14,6 @@ function App() {
   const requestToken = useSelector(({ token }) => token.requestToken)
   const [hasToken] = useState(() => localStorage.getItem('access_token'))
 
-  console.log(window.location)
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
     const access_token = params.get('access_token')

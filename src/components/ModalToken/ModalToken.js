@@ -10,7 +10,7 @@ export default ({ requestToken }) => {
   }
   const handleAddToken = () => {
     localStorage.setItem('access_token', token)
-    document.location.reload()
+    window.location.reload()
   }
   const handleLogin = () => {
     window.location.href = process.env.REACT_APP_LOGIN_ENDPOINT

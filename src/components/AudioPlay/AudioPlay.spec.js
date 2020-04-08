@@ -8,6 +8,6 @@ describe('AudioPlay', () => {
       <AudioPlay artist="Artist A" trackName={'Track 1'} />
     )
 
-    expect(getByText('Artist A - Track 1'))
+    expect(getByText('Your browser does not support the audio element.'))
   })
 })

@@ -1,6 +1,10 @@
 import { map } from 'rxjs/operators'
 import { combineEpics, ofType } from 'redux-observable'
-import { ACTION_TYPES, tokenRequestSuccess } from 'store/reducers/token'
+import {
+  ACTION_TYPES,
+  tokenRequestSuccess,
+  tokenRequestError
+} from 'store/reducers/token'
 
 const expiredTokenEpic = action$ =>
   action$.pipe(
@@ -12,7 +16,7 @@ const expiredTokenEpic = action$ =>
 
       localStorage.setItem('access_token', '')
 
-      return { type: 'NULL' }
+      return tokenRequestError()
     })
   )
 

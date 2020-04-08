@@ -5,6 +5,7 @@ import { tokenRequest } from 'store/reducers/token'
 export const handleHttpError = cb =>
   catchError(({ response, status }) => {
     switch (status) {
+      case 502:
       case 401:
         localStorage.removeItem('access_token')
 
