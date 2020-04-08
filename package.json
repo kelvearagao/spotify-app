@@ -4,7 +4,9 @@
   "homepage": "spotify-app",
   "scripts": {
     "start": "webpack-dev-server --open --env.ENVIRONMENT=development --config webpack.config.dev.js",
-    "build": "webpack --env.ENVIRONMENT=production --config webpack.config.prod.js",
+    "build:dsv": "webpack --env.ENVIRONMENT=development --config webpack.config.prod.js",
+    "build:hml": "webpack --env.ENVIRONMENT=homolog --config webpack.config.prod.js",
+    "build:prd": "webpack --env.ENVIRONMENT=production --config webpack.config.prod.js",
     "test": "jest --watch",
     "test:ci": "jest --coverage",
     "format": "pretty-quick",
@@ -15,8 +17,8 @@
       "pre-commit": "pretty-quick --state && npm run lint && npm run test:ci"
     }
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["Spotify", "ReactJs"],
+  "author": "Kelve Aragão",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.9.0",
