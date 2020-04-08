@@ -9,7 +9,7 @@ export default () => {
 
   useEffect(() => {
     audioRef.current.src = playData.previewUrl
-    audioRef.current.play()
+    audioRef.current.play().catch(err => console.log(err))
   }, [playData.previewUrl])
 
   return (

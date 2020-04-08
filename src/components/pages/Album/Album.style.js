@@ -33,7 +33,10 @@ export const Wrapper = styled.section`
 
       .img-container {
         margin: 0 auto;
-        background-color: #999999;
+
+        .bg {
+          transition: none;
+        }
 
         :hover .bg {
           opacity: 1;
@@ -41,7 +44,7 @@ export const Wrapper = styled.section`
         }
 
         :hover .bg:before {
-          display: none;
+          background-color: transparent;
         }
 
         @media (min-width: 450px) {

@@ -9,10 +9,6 @@ export const Wrapper = styled.div`
     margin-bottom: 10px;
   }
 
-  audio {
-    --width: 100%;
-  }
-
   #player {
     display: block;
     padding: 25px;
