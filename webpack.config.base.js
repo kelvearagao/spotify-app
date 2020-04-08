@@ -6,7 +6,7 @@ module.exports = env => ({
   entry: './src/index.js',
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'app.bundle.js'
+    filename: 'app.[hash].bundle.js'
   },
   module: {
     rules: [
