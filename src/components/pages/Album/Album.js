@@ -1,32 +1,30 @@
-import React, { useEffect, useState, useRef } from "react"
-import { useSelector, useDispatch } from "react-redux"
-import { millisToMinutesAndSeconds } from "utils/time"
+import React, { useEffect, useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { millisToMinutesAndSeconds } from 'utils/time'
 import {
   TrackList,
   TrackItem,
   TrackIndex,
   TrackName,
   TrackTime
-} from "components/TrackList"
-import AudioPlay from "components/AudioPlay"
-import BackIcon from "components/Back"
-import Card from "components/Card"
-import { Wrapper } from "./Album.style"
-import { Link } from "react-router-dom"
-import { path } from "ramda"
-import { albumRequest } from "store/reducers/album"
-import { playSetMusic } from "store/reducers/play"
+} from 'components/TrackList'
+import BackIcon from 'components/Back'
+import Card from 'components/Card'
+import { Wrapper } from './Album.style'
+import { Link } from 'react-router-dom'
+import { path } from 'ramda'
+import { albumRequest } from 'store/reducers/album'
+import { playSetMusic } from 'store/reducers/play'
 
 export default ({ match }) => {
   const data = useSelector(({ album }) => album.data[match.params.id])
-  const artist = path(["artist"], data)
-  const name = path(["name"], data)
-  const image = path(["image"], data)
-  const items = path(["items"], data) || []
+  const artist = path(['artist'], data)
+  const name = path(['name'], data)
+  const image = path(['image'], data)
+  const items = path(['items'], data) || []
 
   const dispatch = useDispatch()
-  const [music, setMusic] = useState("")
-  const audioRef = useRef(null)
+  const [music, setMusic] = useState('')
 
   useEffect(() => {
     if (!data) {
@@ -37,14 +35,14 @@ export default ({ match }) => {
   function selectMusic(item) {
     setMusic(item)
     console.log(item)
-    dispatch(playSetMusic({
-      previewUrl: item.preview_url,
-      artist: item.artists[0].name,
-      musicName: item.name,
-      albumImg: image,
-    }))
-    //audioRef.current.src = item.preview_url
-    //audioRef.current.play()
+    dispatch(
+      playSetMusic({
+        previewUrl: item.preview_url,
+        artist: item.artists[0].name,
+        musicName: item.name,
+        albumImg: image
+      })
+    )
   }
 
   return (
@@ -57,7 +55,13 @@ export default ({ match }) => {
 
       <section>
         <aside>
-          <Card id="main-img" imgSrc={image} title={name} subtitle={artist} isActive />
+          <Card
+            id="main-img"
+            imgSrc={image}
+            title={name}
+            subtitle={artist}
+            isActive
+          />
         </aside>
 
         <article>

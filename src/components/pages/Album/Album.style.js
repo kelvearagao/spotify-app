@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const Wrapper = styled.section`
   font-size: 18px;
@@ -25,7 +25,7 @@ export const Wrapper = styled.section`
     -webkit-tap-highlight-color: transparent;
     #main-img {
       margin-bottom: 24px;
-      
+
       div {
         cursor: default;
         margin-bottom: 20px;

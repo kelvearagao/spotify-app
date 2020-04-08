@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   display: flex;
@@ -13,14 +13,15 @@ export const Wrapper = styled.div`
     --width: 100%;
   }
 
-  
   #player {
     display: block;
     padding: 25px;
-    color: #333;    
+    color: #333;
   }
 
-  #play, #next, #pre {
+  #play,
+  #next,
+  #pre {
     --width: 50px;
     --height: 50px;
     border: 0;
@@ -29,9 +30,9 @@ export const Wrapper = styled.div`
     outline: none;
     cursor: pointer;
     position: absolute;
-    --top:50%;
+    --top: 50%;
     --left: 50%;
-    --transform: translate(-50%,-50%);
+    --transform: translate(-50%, -50%);
 
     i {
       color: #ffffff;
@@ -39,47 +40,42 @@ export const Wrapper = styled.div`
     }
   }
 
-  #buttons
-  {
+  #buttons {
     display: flex;
     width: 100%;
     margin-top: 65px;
-    position:relative;
-    top:20%;
+    position: relative;
+    top: 20%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
   }
 
-  #next
-{
+  #next {
     width: 30px;
     height: 30px;
     left: 70%;
-}
+  }
 
-#play {
-  font-size: 24px;
-}
+  #play {
+    font-size: 24px;
+  }
 
-
- #pre
-{
+  #pre {
     width: 30px;
     height: 30px;
     left: 30%;
-    
-}
- 
-#play img, #next img, #pre img
-{
-    position: absolute;
-    top:50%;
-    left: 50%;
-    transform: translate(-50%,-50%); 
-}
+  }
 
-#seek-bar
-{
+  #play img,
+  #next img,
+  #pre img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #seek-bar {
     width: 250px;
     height: 5px;
     background-color: gray;
@@ -87,23 +83,20 @@ export const Wrapper = styled.div`
     border: 50px;
     margin-left: 25px;
     cursor: pointer;
-    
-}
+  }
 
-#fill
-{
+  #fill {
     height: 5px;
     background-color: #202021;
     border-radius: 20px;
-}
+  }
 
-#handle
-{
+  #handle {
     width: 9px;
     height: 9px;
     background-color: #202021;
     border-radius: 50%;
     margin-left: -5px;
     transform: scale(2);
-}
+  }
 `

@@ -9,7 +9,7 @@
   },
   "settings": {
     "react": {
-      "version": "16.10.2"
+      "version": "16.13.1"
     }
   },
   "extends": [
@@ -20,6 +20,18 @@
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
+  },
+  "rules": {
+    "react/display-name": 0,
+    "react/prop-types": 0,
+    "react/no-unescaped-entities": 0,
+    "jsx-a11y/label-has-associated-control": [2, {
+      "controlComponents": ["InputSearch"]
+    }],
+    "jsx-a11y/media-has-caption": 0,
+    "quotes": [2, "single", { "avoidEscape": true }],
+    "comma-dangle": 2,
+    "arrow-parens": [2, "as-needed"]
   },
   "parserOptions": {
     "ecmaFeatures": {

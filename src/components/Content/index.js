@@ -1,1 +1,1 @@
-export { default } from "./Content.style"
+export { default } from './Content.style'

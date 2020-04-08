@@ -1,13 +1,13 @@
 export const initialState = {
   isError: false,
   data: {
-    search: ""
+    search: ''
   }
 }
 
-const SEARCH_REQUEST = "SEARCH_REQUEST"
-const SEARCH_REQUEST_SUCCESS = "SEARCH_REQUEST_SUCCESS"
-const SEARCH_REQUEST_ERROR = "SEARCH_REQUEST_ERROR"
+const SEARCH_REQUEST = 'SEARCH_REQUEST'
+const SEARCH_REQUEST_SUCCESS = 'SEARCH_REQUEST_SUCCESS'
+const SEARCH_REQUEST_ERROR = 'SEARCH_REQUEST_ERROR'
 
 export const ACTION_TYPES = {
   SEARCH_REQUEST,

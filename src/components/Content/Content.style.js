@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 const Content = styled.div`
   position: relative;
@@ -12,7 +12,7 @@ const Content = styled.div`
 
   @media (min-width: 1280px) {
     top: -40px;
-  } 
+  }
 `
 
 export default Content

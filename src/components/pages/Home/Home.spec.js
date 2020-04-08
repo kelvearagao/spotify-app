@@ -1,28 +1,28 @@
-import React from "react"
-import { renderWithProvider, mockStore } from "__tests__/utils"
-import Home from "./Home"
-import { fireEvent } from "@testing-library/dom"
-import * as homeReducer from "store/reducers/home"
+import React from 'react'
+import { renderWithProvider, mockStore } from '__tests__/utils'
+import Home from './Home'
+import { fireEvent } from '@testing-library/dom'
+import * as homeReducer from 'store/reducers/home'
 
-jest.mock("store/reducers/home")
+jest.mock('store/reducers/home')
 
 const items = [
   {
     id: 1,
-    images: [{ url: "katy.jpeg" }],
-    name: "Katy Album",
-    artists: [{ name: "Katy" }]
+    images: [{ url: 'katy.jpeg' }],
+    name: 'Katy Album',
+    artists: [{ name: 'Katy' }]
   }
 ]
 
-describe("Home", () => {
+describe('Home', () => {
   beforeEach(() => {
     homeReducer.searchRequest = jest.fn(() => ({
-      type: "TEST"
+      type: 'TEST'
     }))
   })
 
-  it("Should render the Home component", () => {
+  it('Should render the Home component', () => {
     const { getByText, getByPlaceholderText } = renderWithProvider({
       store: mockStore({
         home: {
@@ -33,12 +33,12 @@ describe("Home", () => {
     })
 
     expect(
-      getByText("Busque por artistas, álbuns ou músicas")
+      getByText('Busque por artistas, álbuns ou músicas')
     ).toBeInTheDocument()
-    expect(getByPlaceholderText("Comece a escrever...")).toBeInTheDocument()
+    expect(getByPlaceholderText('Comece a escrever...')).toBeInTheDocument()
   })
 
-  it("Should fire the searchRequest when the InputSearch is changed ", () => {
+  it('Should fire the searchRequest when the InputSearch is changed ', () => {
     const { getByPlaceholderText } = renderWithProvider({
       store: mockStore({
         home: {
@@ -48,21 +48,21 @@ describe("Home", () => {
       component: <Home />
     })
 
-    fireEvent.change(getByPlaceholderText("Comece a escrever..."), {
+    fireEvent.change(getByPlaceholderText('Comece a escrever...'), {
       target: {
-        value: "Katy"
+        value: 'Katy'
       }
     })
 
-    expect(homeReducer.searchRequest).toBeCalledWith("Katy")
+    expect(homeReducer.searchRequest).toBeCalledWith('Katy')
   })
 
-  it("Should render Card has a searh", () => {
+  it('Should render Card has a searh', () => {
     const { getByText } = renderWithProvider({
       store: mockStore({
         home: {
           data: {
-            search: "Katy",
+            search: 'Katy',
             Katy: {
               items: [...items]
             }
@@ -72,11 +72,11 @@ describe("Home", () => {
       component: <Home />
     })
 
-    expect(getByText("Katy Album"))
-    expect(getByText("Katy"))
+    expect(getByText('Katy Album'))
+    expect(getByText('Katy'))
   })
 
-  it("Should call history push when the Card is clicked", () => {
+  it('Should call history push when the Card is clicked', () => {
     const history = {
       push: jest.fn()
     }
@@ -84,7 +84,7 @@ describe("Home", () => {
       store: mockStore({
         home: {
           data: {
-            search: "Katy",
+            search: 'Katy',
             Katy: {
               items: [...items]
             }
@@ -94,13 +94,13 @@ describe("Home", () => {
       component: <Home history={history} />
     })
 
-    fireEvent.click(getByText("Katy Album"))
+    fireEvent.click(getByText('Katy Album'))
 
-    expect(history.push).toBeCalledWith("/album/1")
+    expect(history.push).toBeCalledWith('/album/1')
   })
 
-  it("Should fire searchRequest when localStorage has the last search", () => {
-    localStorage.setItem("search", "Mc Kevin")
+  it('Should fire searchRequest when localStorage has the last search', () => {
+    localStorage.setItem('search', 'Mc Kevin')
 
     renderWithProvider({
       store: mockStore({
@@ -111,6 +111,6 @@ describe("Home", () => {
       component: <Home history={history} />
     })
 
-    expect(homeReducer.searchRequest).toBeCalledWith("Mc Kevin")
+    expect(homeReducer.searchRequest).toBeCalledWith('Mc Kevin')
   })
 })

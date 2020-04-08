@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const CardTitle = styled.p`
   color: white;
@@ -40,10 +40,10 @@ export const Card = styled.div`
     background-image: url(${({ imgBg }) => imgBg});
     width: 100%;
     height: 100%;
-    transition: all .5s;
+    transition: all 0.5s;
 
     ::before {
-      content: "";
+      content: '';
       display: block;
       height: 100%;
       width: 100%;
@@ -51,15 +51,13 @@ export const Card = styled.div`
       top: 0;
       left: 0;
       background-color: transparent;
-      transition: all .5s;
+      transition: all 0.5s;
     }
   }
 
   ${CardTitle}, ${CardSubtitle}, img {
     margin-top: 10px;
   }
-
-  
 `
 
 export default Card

@@ -4,23 +4,23 @@ import {
   tap,
   debounceTime,
   withLatestFrom
-} from "rxjs/operators"
-import { of } from "rxjs"
-import { combineEpics, ofType } from "redux-observable"
+} from 'rxjs/operators'
+import { of } from 'rxjs'
+import { combineEpics, ofType } from 'redux-observable'
 import {
   ACTION_TYPES,
   searchRequestSuccess,
   searchRequestError
-} from "store/reducers/home"
-import searchService from "services/search"
-import { handleHttpError } from "utils/httpHandlers"
+} from 'store/reducers/home'
+import searchService from 'services/search'
+import { handleHttpError } from 'utils/httpHandlers'
 
 const searchEpic = (action$, state$) =>
   action$.pipe(
     ofType(ACTION_TYPES.SEARCH_REQUEST),
     debounceTime(600),
     tap(action => {
-      localStorage.setItem("search", action.payload)
+      localStorage.setItem('search', action.payload)
     }),
     withLatestFrom(state$),
     switchMap(([action, state]) => {

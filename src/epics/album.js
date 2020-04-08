@@ -1,13 +1,13 @@
-import { switchMap, map } from "rxjs/operators"
-import { of } from "rxjs"
-import { combineEpics, ofType } from "redux-observable"
-import albumService from "services/album"
+import { switchMap, map } from 'rxjs/operators'
+import { of } from 'rxjs'
+import { combineEpics, ofType } from 'redux-observable'
+import albumService from 'services/album'
 import {
   ACTION_TYPES,
   albumRequestSuccess,
   albumRequestError
-} from "store/reducers/album"
-import { handleHttpError } from "utils/httpHandlers"
+} from 'store/reducers/album'
+import { handleHttpError } from 'utils/httpHandlers'
 
 const searchEpic = action$ =>
   action$.pipe(

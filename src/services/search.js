@@ -1,4 +1,4 @@
-import { get } from "utils/ajax"
+import { get } from 'utils/ajax'
 
 export default query =>
   get(

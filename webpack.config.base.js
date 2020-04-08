@@ -1,5 +1,5 @@
 const path = require('path')
-const Dotenv = require('dotenv-webpack');
+const Dotenv = require('dotenv-webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = env => ({
@@ -17,7 +17,7 @@ module.exports = env => ({
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        use: ["file-loader"]
+        use: ['file-loader']
       }
     ]
   },

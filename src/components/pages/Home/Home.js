@@ -1,23 +1,23 @@
-import React, { useMemo, useEffect } from "react"
-import { useSelector, useDispatch } from "react-redux"
-import Card from "components/Card"
-import { InputSearch } from "components/InputSearch/index.style"
-import { searchRequest } from "store/reducers/home"
-import { CardsWrapper, Wrapper } from "./Home.style"
-import { path } from "ramda"
+import React, { useMemo, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import Card from 'components/Card'
+import { InputSearch } from 'components/InputSearch/index.style'
+import { searchRequest } from 'store/reducers/home'
+import { CardsWrapper, Wrapper } from './Home.style'
+import { path } from 'ramda'
 
 export default ({ history }) => {
   const data = useSelector(({ home }) => home.data[home.data.search])
   const search = useSelector(({ home }) => home.data.search)
   const dispatch = useDispatch()
-  const items = path(["items"], data) || []
+  const items = path(['items'], data) || []
 
   function handleSearch(e) {
     dispatch(searchRequest(e.target.value))
   }
 
   function handleCardClick(id) {
-    history.push("/album/" + id)
+    history.push('/album/' + id)
   }
 
   const title = useMemo(() => {
@@ -27,7 +27,7 @@ export default ({ history }) => {
   }, [items])
 
   useEffect(() => {
-    const lastSearch = localStorage.getItem("search")
+    const lastSearch = localStorage.getItem('search')
     if (lastSearch) {
       dispatch(searchRequest(lastSearch))
     }
@@ -52,9 +52,9 @@ export default ({ history }) => {
           <Card
             key={item.id}
             onClick={() => handleCardClick(item.id)}
-            imgSrc={path(["images", 1, "url"], item)}
+            imgSrc={path(['images', 1, 'url'], item)}
             title={item.name}
-            subtitle={path(["artists", 0, "name"], item)}
+            subtitle={path(['artists', 0, 'name'], item)}
           ></Card>
         ))}
       </CardsWrapper>
