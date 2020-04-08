@@ -7,7 +7,6 @@ import { CardsWrapper, Wrapper } from "./Home.style"
 import { path } from "ramda"
 
 export default ({ history }) => {
-  console.log('!!!!')
   const data = useSelector(({ home }) => home.data[home.data.search])
   const search = useSelector(({ home }) => home.data.search)
   const dispatch = useDispatch()

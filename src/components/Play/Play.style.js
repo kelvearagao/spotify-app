@@ -30,7 +30,7 @@ export const WrapperContent = styled.div`
        margin: 0;
     }
 
-    @media (min-width: 400px) { 
+    @media (min-width: 450px) { 
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -46,7 +46,7 @@ export default styled.div`
     right: 0;
     bottom: 0;
 
-    @media (min-width: 400px) {
+    @media (min-width: 450px) {
         display: ${({ isVisible }) =>  isVisible ? 'flex' : 'none'};
 
         audio {

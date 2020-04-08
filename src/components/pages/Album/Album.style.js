@@ -22,6 +22,7 @@ export const Wrapper = styled.section`
   }
 
   aside {
+    -webkit-tap-highlight-color: transparent;
     #main-img {
       margin-bottom: 24px;
       
@@ -30,12 +31,23 @@ export const Wrapper = styled.section`
         margin-bottom: 20px;
       }
 
-      img {
+      .img-container {
         margin: 0 auto;
-        width: 100%;
-        max-width: 400px;
-        max-height: 400px;
         background-color: #999999;
+
+        :hover .bg {
+          opacity: 1;
+          transform: none;
+        }
+
+        :hover .bg:before {
+          display: none;
+        }
+
+        @media (min-width: 450px) {
+          width: 300px;
+          height: 300px;
+        }
       }
 
       p {
@@ -51,15 +63,6 @@ export const Wrapper = styled.section`
   @media (min-width: 800px) {
     section {
       flex-direction: row;
-    }
-
-    aside {
-      #main-img {
-        img {
-          width: 300px;
-          height: 300px;
-        }
-      }
     }
 
     ol {

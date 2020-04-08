@@ -35,7 +35,7 @@ export const ModalContent = styled.div`
     animation-duration: 0.4s;
     animation-fill-mode: forwards;
 
-    @media (min-width: 400px) {
+    @media (min-width: 450px) {
         width: 400px;
     }
 `

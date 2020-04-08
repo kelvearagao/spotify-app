@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 export const TrackList = styled.ol`
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 `
 
 export const TrackItem = styled.li`
@@ -12,6 +13,8 @@ export const TrackItem = styled.li`
   :hover {
     opacity: 1;
   }
+
+  outline: none;
 
   transition: opacity 0.25s;
 `

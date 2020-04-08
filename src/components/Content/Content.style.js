@@ -4,9 +4,8 @@ const Content = styled.div`
   position: relative;
   margin: 0 auto;
   max-width: 1140px;
-  padding-top: 24px;
 
-  @media (min-width: 400px) {
+  @media (min-width: 450px) {
     padding: 0;
     padding-top: 12px;
   }

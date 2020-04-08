@@ -16,7 +16,7 @@ export const InputSearch = styled.input`
     color: #999999;
   }
 
-  @media (min-width: 400px) {
+  @media (min-width: 450px) {
     font-size: 38px;
     padding: 8px 10px 10px 10px;
   }

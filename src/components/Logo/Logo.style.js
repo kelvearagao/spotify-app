@@ -4,7 +4,7 @@ export default styled.img`
   display: none;
   width: 50px;
 
-  @media (min-width: 400px) {
+  @media (min-width: 450px) {
     display: block;
   }
 `
