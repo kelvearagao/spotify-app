@@ -5,8 +5,6 @@ import Album from './Album'
 import { fireEvent } from '@testing-library/dom'
 import { playSetMusic } from 'store/reducers/play'
 
-window.HTMLMediaElement.prototype.play = jest.fn()
-
 const item = {
   id: 1,
   artist: 'Katy',

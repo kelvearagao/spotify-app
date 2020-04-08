@@ -1,13 +1,10 @@
 import React from 'react'
-import { Modal, ModalContent, ModalClose } from './Modal.style'
+import { Modal, ModalContent } from './Modal.style'
 
-export default ({ handleClose, isVisible, showClose = false, children }) => {
-    return (
-        <Modal isVisible={isVisible} onClick={handleClose} >
-            <ModalContent onClick={e => e.stopPropagation()}>
-                { showClose && <ModalClose onClick={handleClose}>&times;</ModalClose> }
-                { children }
-            </ModalContent>
-        </Modal>
-    )
+export default ({ handleClose, isVisible, children }) => {
+  return (
+    <Modal isVisible={isVisible} onClick={handleClose}>
+      <ModalContent onClick={e => e.stopPropagation()}>{children}</ModalContent>
+    </Modal>
+  )
 }
