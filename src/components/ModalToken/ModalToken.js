@@ -14,6 +14,9 @@ export default ({ requestToken }) => {
        localStorage.setItem('access_token', token)
        document.location.reload()
     }
+    const handleLogin = () => {
+        window.location.href = process.env.REACT_APP_LOGIN_ENDPOINT
+    }
     
     return (
         <Modal isVisible={requestToken}>
@@ -29,6 +32,12 @@ export default ({ requestToken }) => {
                     />
                 </ModalBody>
                 <ModalFooter>
+                    <Button 
+                        variante="secondary"
+                        onClick={handleLogin}
+                    >
+                        Não tenho Token
+                    </Button>
                     <Button 
                         disabled={!token} 
                         onClick={handleAddToken} 

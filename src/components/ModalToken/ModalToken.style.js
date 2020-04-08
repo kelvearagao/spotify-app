@@ -14,4 +14,8 @@ export default styled.div`
         width: 100%;
         color: #ffffff; 
     }
+
+    button:nth-child(2) {
+        margin-left: 12px;
+    }
 `

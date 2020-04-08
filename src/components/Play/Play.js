@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react"
 import { useSelector } from "react-redux"
 import AudioPlay from 'components/AudioPlay'
-import Wrapper, { Album } from './Play.style'
+import Wrapper, { Album, WrapperContent } from './Play.style'
 
 export default () => {
     const playData = useSelector(({ play }) => play.data)
@@ -14,31 +14,33 @@ export default () => {
 
     return (
             <Wrapper isVisible={playData.previewUrl}>
-                <div>
-                    <Album>
-                        <div>
-                            { playData.albumImg && <img src={playData.albumImg} /> }
-                        </div>
-                        <div>
+                <WrapperContent>
+                    <div>
+                        <Album>
                             <div>
-                                { playData.musicName }
+                                { playData.albumImg && <img src={playData.albumImg} /> }
                             </div>
                             <div>
-                                { playData.artist }
+                                <div>
+                                    { playData.musicName }
+                                </div>
+                                <div>
+                                    { playData.artist }
+                                </div>
                             </div>
-                        </div>
-                    </Album>
-                </div>
+                        </Album>
+                    </div>
 
-                <AudioPlay
-                artist={playData.artist}
-                trackName={playData.musicName}
-                audioRef={audioRef}
-                />
+                    <AudioPlay
+                    artist={playData.artist}
+                    trackName={playData.musicName}
+                    audioRef={audioRef}
+                    />
 
-                <div>
-                    { ' '}
-                </div>
+                    <div>
+                        { ' '}
+                    </div>
+                </WrapperContent>
             </Wrapper>
         )
 }

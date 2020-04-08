@@ -24,4 +24,6 @@ export const TrackName = styled.span`
   width: 100%;
 `
 
-export const TrackTime = styled.span``
+export const TrackTime = styled.span`
+  padding-left: 12px;
+`

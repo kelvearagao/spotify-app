@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const Album = styled.div`
     display: none;
+    font-size: 12px;
 
     @media (min-width: 800px) {
         display: flex;
@@ -14,11 +15,30 @@ export const Album = styled.div`
     }
 `
 
-export default styled.div`
-    display: ${({ isVisible }) =>  !isVisible && 'none'};
+export const WrapperContent = styled.div`
+    max-width: 1140px;
+    margin: 0 auto;
+    width: 100%;
+
     > div {
         flex: 1;
     }
+
+    audio {
+       outline: none;
+       width: 100%;
+       margin: 0;
+    }
+
+    @media (min-width: 400px) { 
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+`
+
+export default styled.div`
+    display: ${({ isVisible }) =>  !isVisible && 'none'};
     padding: 12px;
     background-color: #252222;
     position: fixed;
@@ -26,15 +46,8 @@ export default styled.div`
     right: 0;
     bottom: 0;
 
-    audio {
-       width: 100%;
-       margin: 0;
-    }
-
     @media (min-width: 400px) {
         display: ${({ isVisible }) =>  isVisible ? 'flex' : 'none'};
-        align-items: center;
-        justify-content: space-between;
 
         audio {
             width: 300px;

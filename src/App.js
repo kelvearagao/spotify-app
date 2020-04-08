@@ -12,36 +12,24 @@ import Play from "components/Play"
 function App() {
   const dispatch = useDispatch()
   const requestToken = useSelector(({ token }) => token.requestToken)
-  const [hasToken, setHasToken] = useState(() => localStorage.getItem("access_token"))
+  const [hasToken] = useState(() => localStorage.getItem("access_token"))
 
-  // useEffect(() => {
-  //   if(hasToken) {
-  //     return
-  //   }
+  console.log(window.location)
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const access_token = params.get('access_token')
 
-  //   const params = new URLSearchParams(window.location.search);
-  //   const access_token = params.get('access_token')
-  //   const refresh_token = params.get('refresh_token')
-
-  //   if(access_token) {
-  //     localStorage.setItem('access_token', access_token)
-  //     localStorage.setItem('refresh_token', refresh_token)
-  //     setHasToken(true)
-
-  //     window.history.pushState({}, document.title, process.env.PUBLIC_URL + (process.env.PUBLIC_URL === '/' ? '#/' : '/#/'))
-  //   } else {
-  //     window.location.href = process.env.REACT_APP_LOGIN_ENDPOINT
-  //     return
-  //   }
-  // }, [])
+    if(access_token) {
+      localStorage.setItem('access_token', access_token)
+      window.location.href = window.location.origin + process.env.PUBLIC_URL
+    }
+  }, [])
 
   useEffect(() => {
     if (!hasToken) {
       dispatch({ type: "TOKEN_REQUEST" })
     }
   }, [hasToken, dispatch])
-
-  console.log('-->', requestToken)
 
   return (
     <Container>
