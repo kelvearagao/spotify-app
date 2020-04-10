@@ -37,6 +37,9 @@ describe('Album', () => {
       store: mockStore({
         album: {
           data: {}
+        },
+        play: {
+          data: {}
         }
       }),
       component: <Album match={match} />
@@ -60,6 +63,9 @@ describe('Album', () => {
               ...item
             }
           }
+        },
+        play: {
+          data: {}
         }
       }),
       component: <Album match={match} />
@@ -99,10 +105,26 @@ describe('Album', () => {
 
     expect(store.dispatch).toBeCalledWith(
       playSetMusic({
+        albumId: 1,
+        albumName: 'Katy Album',
         albumImg: 'katy.jpeg',
         artist: 'Katy',
         musicName: 'Fireworks',
-        previewUrl: 'music.mp3'
+        previewUrl: 'music.mp3',
+        index: 0,
+        items: [
+          {
+            artists: [
+              {
+                name: 'Katy'
+              }
+            ],
+            duration_ms: 200000,
+            id: 1,
+            name: 'Fireworks',
+            preview_url: 'music.mp3'
+          }
+        ]
       })
     )
   })

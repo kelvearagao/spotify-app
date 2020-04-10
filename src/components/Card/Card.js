@@ -6,7 +6,6 @@ export default ({ id, imgSrc, title, subtitle, onClick, isActive }) => (
     <div className="img-container">
       <div className="bg" />
     </div>
-    {/* <img src={imgSrc} alt={title} /> */}
     <CardTitle>{title}</CardTitle>
     <CardSubtitle>{subtitle}</CardSubtitle>
   </Card>

@@ -6,7 +6,9 @@ describe('Play reducer', () => {
       previewUrl: 'katy.mp3',
       artist: 'Katy',
       musicName: 'fireworks',
-      albumImg: 'katy.jpg'
+      albumImg: 'katy.jpg',
+      index: 1,
+      items: [{}]
     }
 
     const result = reducer(undefined, playSetMusic(payload))

@@ -1,13 +1,14 @@
 import styled from 'styled-components'
+import { color, fontSize, media } from 'theme'
 
 export const Wrapper = styled.section`
-  font-size: 18px;
+  font-size: ${fontSize.md};
 
   header {
     margin-bottom: 40px;
 
     a {
-      color: #fafafa;
+      color: ${color.snow};
       text-decoration: none;
     }
   }
@@ -47,14 +48,14 @@ export const Wrapper = styled.section`
           background-color: transparent;
         }
 
-        @media (min-width: 450px) {
+        @media (min-width: ${media.sm}) {
           width: 300px;
           height: 300px;
         }
       }
 
       p {
-        font-size: 18px;
+        font-size: ${fontSize.md};
       }
     }
   }
@@ -63,7 +64,7 @@ export const Wrapper = styled.section`
     margin-left: 0px;
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: ${media.md}) {
     section {
       flex-direction: row;
     }

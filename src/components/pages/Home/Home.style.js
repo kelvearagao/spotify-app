@@ -1,25 +1,26 @@
 import styled from 'styled-components'
+import { color, fontSize, media } from 'theme'
 
 export const Wrapper = styled.div`
-  color: #fafafa;
+  color: ${color.snow};
 
   label span {
     padding-left: 0;
-    font-size: 16px;
+    font-size: ${fontSize.sm};
     opacity: 0.8;
 
-    @media (min-width: 450px) {
+    @media (min-width: ${media.sm}) {
       padding-left: 10px;
     }
   }
 
   h1 {
-    font-size: 18px;
+    font-size: ${fontSize.md};
     margin: 35px 0 6px 5px;
     font-weight: 300;
 
-    @media (min-width: 450px) {
-      font-size: 24px;
+    @media (min-width: ${media.sm}) {
+      font-size: ${fontSize.lg};
     }
   }
 `
@@ -27,11 +28,11 @@ export const Wrapper = styled.div`
 export const CardsWrapper = styled.div`
   .img-container {
     width: 100%;
-    background-color: #999999;
+    background-color: ${color.darkGrey};
     margin-top: 24px;
   }
 
-  @media (min-width: 450px) {
+  @media (min-width: ${media.sm}) {
     display: grid;
     grid-column-gap: 70px;
     grid-row-gap: 33px;

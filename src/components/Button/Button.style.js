@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { color, fontSize } from 'theme'
 
 export default styled.button`
   cursor: pointer;
@@ -7,22 +8,22 @@ export default styled.button`
   padding: 12px 24px;
   border-width: 0;
   outline: none;
-  color: #ffffff;
-  font-size: 12px;
+  color: ${color.white};
+  font-size: ${fontSize.xs};
   font-weight: 700;
-  background-color: #1db954;
+  background-color: ${color.darkGreen};
   :not(:disabled):hover {
-    background-color: #1ed760;
+    background-color: ${color.lightGreen};
   }
 
   ${({ variante }) =>
     variante === 'secondary' &&
     `
         background-color: transparent;
-        border: 1px solid  #ffffff;
+        border: 1px solid  ${color.white};
         :not(:disabled):hover {
-            color: #1db954;
-            background-color: #ffffff;
+            color: ${color.darkGreen};
+            background-color: ${color.white};
         }
     `}
 

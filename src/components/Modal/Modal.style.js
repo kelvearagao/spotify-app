@@ -1,7 +1,8 @@
 import styled, { keyframes } from 'styled-components'
+import { color, fontSize, media } from 'theme'
 
 export const Modal = styled.div`
-  background-color: #888;
+  background-color: ${color.grey};
   display: ${({ isVisible }) => (isVisible ? 'block' : 'none')};
   position: fixed;
   z-index: 1;
@@ -10,11 +11,10 @@ export const Modal = styled.div`
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
 
   h2 {
-    color: black;
+    color: ${color.black};
   }
 `
 
@@ -25,52 +25,36 @@ const animatetop = keyframes`
 
 export const ModalContent = styled.div`
   position: relative;
-  background-color: #fefefe;
   margin: auto;
   padding: 0;
-  border: 1px solid #888;
+  border: 1px solid ${color.grey};
   width: 100%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   animation-name: ${animatetop};
   animation-duration: 0.4s;
   animation-fill-mode: forwards;
 
-  @media (min-width: 450px) {
+  @media (min-width: ${media.sm}) {
     width: 400px;
   }
 `
 
-export const ModalClose = styled.span`
-  padding: 8px 16px;
-  color: white;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-
-  &:hover,
-  &:focus {
-    color: #000000;
-    text-decoration: none;
-    cursor: pointer;
-  }
-`
-
 export const ModalHeader = styled.div`
-  font-size: 16px;
+  font-size: ${fontSize.sm};
   font-weight: 500;
   padding: 12px;
-  background-color: #333333;
-  color: white;
+  background-color: ${color.nightRider};
+  color: ${color.white};
 `
 
 export const ModalBody = styled.div`
   padding: 12px;
   height: 100px;
-  background-color: #252222;
+  background-color: ${color.nero};
 `
 
 export const ModalFooter = styled.div`
   padding: 12px;
-  background-color: #333333;
-  color: white;
+  background-color: ${color.nightRider};
+  color: ${color.white};
 `

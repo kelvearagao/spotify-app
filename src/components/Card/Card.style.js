@@ -1,18 +1,19 @@
 import styled from 'styled-components'
+import { color, fontSize, media } from 'theme'
 
 export const CardTitle = styled.p`
-  color: white;
+  color: ${color.white};
   text-decoration: none;
 `
 
 export const CardSubtitle = styled.p`
-  color: #999999;
+  color: ${color.darkGrey};
 `
 
 export const Card = styled.div`
   display: flex;
   flex-direction: column;
-  font-size: 14px;
+  font-size: ${fontSize.xs};
   text-align: center;
   cursor: pointer;
 
@@ -20,7 +21,7 @@ export const Card = styled.div`
     overflow: hidden;
     width: 100%;
     height: calc(100vw - 48px);
-    background-color: #999999;
+    background-color: ${color.darkGrey};
 
     .bg {
       background-image: url(${({ imgBg }) => imgBg});
@@ -31,10 +32,7 @@ export const Card = styled.div`
       height: 100%;
     }
 
-    @media (min-width: 450px) {
-      .bg {
-      }
-
+    @media (min-width: ${media.sm}) {
       :hover {
         .bg {
           transform: scale(1.2);
@@ -47,7 +45,7 @@ export const Card = styled.div`
     }
   }
 
-  @media (min-width: 450px) {
+  @media (min-width: ${media.sm}) {
     .bg {
       transition: all 0.5s;
 

@@ -1,23 +1,24 @@
 import styled from 'styled-components'
+import { color, fontSize, media } from 'theme'
 
 export const InputSearch = styled.input`
   width: 100%;
-  font-size: 24px;
+  font-size: ${fontSize.lg};
   background-color: transparent;
-  color: #fafafa;
+  color: ${color.snow};
   font-weight: bold;
   border: 0;
   outline: 0;
-  caret-color: #ffffff;
+  caret-color: ${color.white};
   padding: 8px 0 10px 0;
-  border-bottom: 1px solid #999999;
+  border-bottom: 1px solid ${color.darkGrey};
 
   ::-webkit-input-placeholder {
-    color: #999999;
+    color: ${color.darkGrey};
   }
 
-  @media (min-width: 450px) {
-    font-size: 38px;
+  @media (min-width: ${media.sm}) {
+    font-size: ${fontSize.xl};
     padding: 8px 10px 10px 10px;
   }
 `

@@ -5,7 +5,6 @@ module.exports = {
     'src/**/*.js',
     '!src/**/*.style.js',
     '!src/**/index.js',
-    '!src/App.js',
     '!src/store/configureStore.js',
     '!src/__tests__/utils.js'
   ],

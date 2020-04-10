@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { millisToMinutesAndSeconds } from 'utils/time'
 import {
@@ -18,13 +18,13 @@ import { playSetMusic } from 'store/reducers/play'
 
 export default ({ match }) => {
   const data = useSelector(({ album }) => album.data[match.params.id])
+  const playData = useSelector(({ play }) => play.data)
   const artist = path(['artist'], data)
   const name = path(['name'], data)
   const image = path(['image'], data)
   const items = path(['items'], data) || []
 
   const dispatch = useDispatch()
-  const [music, setMusic] = useState('')
 
   useEffect(() => {
     if (!data) {
@@ -32,14 +32,17 @@ export default ({ match }) => {
     }
   }, [dispatch, match.params.id, data])
 
-  function selectMusic(item) {
-    setMusic(item)
+  function selectMusic(item, index) {
     dispatch(
       playSetMusic({
         previewUrl: item.preview_url,
         artist: path(['artists', 0, 'name'], item),
         musicName: item.name,
-        albumImg: image
+        index,
+        albumName: name,
+        albumImg: image,
+        items,
+        albumId: match.params.id
       })
     )
   }
@@ -68,8 +71,10 @@ export default ({ match }) => {
             {items.map((item, index) => (
               <TrackItem
                 key={item.id}
-                isActive={item.id === music.id}
-                onClick={() => selectMusic(item)}
+                isActive={
+                  playData.musicName + playData.index === item.name + index
+                }
+                onClick={() => selectMusic(item, index)}
               >
                 <TrackIndex>{index + 1}.</TrackIndex>
                 <TrackName>{item.name}</TrackName>

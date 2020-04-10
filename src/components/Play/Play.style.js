@@ -1,56 +1,97 @@
 import styled from 'styled-components'
+import { color, fontSize, media } from 'theme'
+
+export const MusicName = styled.div`
+  width: 100%;
+`
+
+export const ArtistName = styled.div`
+  color: ${color.darkGrey};
+`
+
+export const AlbumName = styled.div`
+  align-items: center;
+  display: none;
+
+  @media (min-width: ${media.md}) {
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+  }
+`
 
 export const Album = styled.div`
-  display: none;
-  font-size: 12px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size: ${fontSize.xs};
 
-  @media (min-width: 800px) {
-    display: flex;
-    align-items: center;
+  > div:last-child {
+    width: calc(100% - 50px - 12px);
+  }
 
-    img {
-      width: 50px;
-      margin-right: 12px;
+  img {
+    width: 54px;
+    margin-right: 12px;
+  }
+
+  ${MusicName}, ${ArtistName} {
+    display: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+
+  @media (min-width: ${media.sm}) {
+    width: auto;
+    ${MusicName}, ${ArtistName} {
+      display: block;
     }
   }
 `
 
 export const WrapperContent = styled.div`
+  display: flex;
+  justify-content: space-between;
   max-width: 1140px;
   margin: 0 auto;
   width: 100%;
 
   > div {
-    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   audio {
+    position: relative;
     outline: none;
-    width: 100%;
+    width: calc(100vw - 96px);
     margin: 0;
   }
 
-  @media (min-width: 450px) {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  @media (min-width: ${media.sm}) {
+    > div {
+      flex: 1;
+    }
+
+    audio {
+      width: 100%;
+    }
   }
 `
 
 export default styled.div`
   display: ${({ isVisible }) => !isVisible && 'none'};
   padding: 12px;
-  background-color: #252222;
+  background-color: ${color.nero};
   position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
 
-  @media (min-width: 450px) {
+  @media (min-width: ${media.sm}) {
     display: ${({ isVisible }) => (isVisible ? 'flex' : 'none')};
-
-    audio {
-      width: 300px;
-    }
   }
 `

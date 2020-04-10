@@ -2,19 +2,18 @@ export const initialState = {
   data: {
     artist: '',
     musicName: '',
-    previewUrl: ''
+    previewUrl: '',
+    index: undefined,
+    items: []
   }
 }
 
 const PLAY_SET_MUSIC = 'PLAY_SET_MUSIC'
 
-export const playSetMusic = ({ previewUrl, artist, musicName, albumImg }) => ({
+export const playSetMusic = payload => ({
   type: PLAY_SET_MUSIC,
   payload: {
-    previewUrl,
-    artist,
-    musicName,
-    albumImg
+    ...payload
   }
 })
 
@@ -23,6 +22,7 @@ export default (state = initialState, { type, payload }) => {
     case PLAY_SET_MUSIC:
       return {
         data: {
+          ...state.data,
           ...payload
         }
       }
