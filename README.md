@@ -1,4 +1,8 @@
-## Demonstração da aplicação
+# Spotify App
+
+Aplicação ReactJs que utiliza apis do spotify.
+
+### Demonstração
 
 Caso queira ver a aplicação funcionando basta clicar no link abaixo:
 
@@ -6,9 +10,9 @@ Caso queira ver a aplicação funcionando basta clicar no link abaixo:
 
 A aplicação oferece duas alternativas para acessá-la:
 
-1. Caso não tenha o token, basta clicar no botão "não tenho token", dessa forma você poderá fazer o login no spotify pelo facebook e ter a permição de acessar a aplicação;
+1. Caso não tenha o token, basta clicar no botão "não tenho token", dessa forma você poderá fazer o login no spotify pelo facebook e ter a permissão para acessar a aplicação;
 
-2. Caso tenha o token basta colar campo "Colar token aqui" e clicar no botão "adicionar token".
+2. Caso tenha o token basta colar no campo "colar token aqui" e clicar no botão "adicionar token".
 
 Abaixo segue alguns prints da aplicação.
 <br /><br />
